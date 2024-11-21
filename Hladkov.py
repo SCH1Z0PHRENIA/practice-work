@@ -1,12 +1,16 @@
-n = len(nums)
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+    return arr
 
-for i in range(n):
-    for j in range(0, n - i - 1):          
-        if nums[j] > nums[j + 1]:
-            nums[j], nums[j + 1] = nums[j + 1], nums[j]
 
-  return nums[]
-
-unsorted_list = [87, 34, 566, 12, 900, 45, 862, 345]
-sorted_list = bubble_sort(unsorted_list)
-print("Sorted array:", sorted_list)
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Відсортований список:", sorted_numbers)
